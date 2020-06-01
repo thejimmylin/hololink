@@ -1,0 +1,119 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    {% endblock %}
+    {% block extracss %}
+    {% endblock %}
+    {% block title %}
+    <title>Hololink</title>
+    {% endblock title %}
+</head>
+
+<body>
+    {% block nav %}
+    <nav class="navbar navbar-expand-md navbar-light j3y-bg-blue-4">
+        <a class="navbar-brand" href="/">Hololink</a>
+        {% if user.is_authenticated %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglerTarget"
+            aria-controls="togglerTarget" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="togglerTarget">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-itrm nav-link" data-toggle="modal" href="#" data-target="#modalHow">
+                    {% trans 'How' %}
+                </a>
+                {% include 'modal_how.html' %}
+                <a class="nav-itrm nav-link" data-toggle="modal" href="#" data-target="#modalWhy">
+                    {% trans 'Why' %}
+                </a>
+                {% include 'modal_why.html' %}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'login' %}">{% trans 'Login' %}</a>
+                        <a class="dropdown-item" href="{% url 'sign_up' %}">{% trans 'Sign up' %}</a>
+                        <a class="dropdown-item" href="{% url 'password_reset' %}">{% trans 'Password reset' %}</a>
+                    </div>
+                </li>
+                <form class="form-inline mr-auto" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    <select name="language" class="form-control" onchange="this.form.submit();">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.code }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </ul>
+        </div>
+        {% else %}
+        <form class="form-inline ml-auto" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <select name="language" class="form-control" onchange="this.form.submit();">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.code }}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
+        {% endif %}
+    </nav>
+    {% endblock %}
+    {% if messages %}
+    {% block messages %}
+    {% for key, value in messages.items %}
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <span class="navbar-text py-0">
+            {{ value }}
+        </span>
+    </nav>
+    {% endfor %}
+    {% endblock %}
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    {% block basejs %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    {% endblock %}
+    {% block extrajs %}
+    {% endblock %}
+</body>
+
+</html>

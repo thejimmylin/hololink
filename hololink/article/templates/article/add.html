@@ -1,0 +1,50 @@
+{% extends 'article/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block extracss %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-auto" style="padding: 1.5rem;">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto j3y-border-1 j3y-bg-blue-1" style="padding: 1.5rem;">
+            <h2>{% trans 'Add' %}</h2>
+            <h2><br></h2>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-row">
+                    <div class="form-group col">
+                        {{ field.label_tag }}
+                        {% render_field field class+='form-control' %}
+                        {% if field.errors %}
+                        <p>{{ field.errors }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="form-row">
+                    <div class="form-group col">
+                        {{ form.non_field_errors }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Add' %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto" style="padding: 1.5rem;">
+        </div>
+    </div>
+</div>
+{% endblock %}

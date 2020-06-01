@@ -1,0 +1,47 @@
+{% extends 'registration/base.html' %}
+{% load i18n %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+<title>{% trans 'Sign up' %} | {% trans 'Accounts' %}</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row" style="height: 6rem;"></div>
+    <div class="row justify-content-center">
+        <div class="col-auto" style="padding: 1.5rem; width: 24rem;">
+            <h1 style="text-align: center;">{% trans 'Sign up' %}</h1>
+            <h2><br></h2>
+            <p>{% trans 'Already got an account? ' %}<a href="{% url 'login' %}" class="text-decoration-none">{% trans 'Login' %}</a>{% trans ' here.' %}</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% if LANGUAGE_CODE == 'en' %}
+                        {% render_field form.email class+='form-control' placeholder='Email' %}
+                        {% else %}
+                        {% render_field form.email class+='form-control' placeholder=form.email.label %}
+                        {% endif %}
+                        {% if form.email.errors %}
+                        <p>{{ form.email.errors }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        {{ form.non_field_errors }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Sign up' %}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
