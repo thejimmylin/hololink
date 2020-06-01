@@ -9,10 +9,12 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row" style="height: 4rem;"></div>
+    <div class="row" style="height: 3rem;"></div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 2rem; width: 48rem;">
-            <h1 style="text-align: center; font-size:5rem">{% trans 'Hololink' %}</h1>
+            <p>
+                <h1 style="text-align: center; font-size:5rem">{% trans 'Hololink' %}</h1>
+            </p>
             <p>
                 <h5 style="text-align: center;">{% trans 'Gather, relate, store and share.' %}</h5>
             </p>
@@ -21,8 +23,10 @@
     <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 2rem;width: 48rem;">
-            <h1 style="text-align: center;">{% trans 'Built for everyone' %}</h1>
-            <h2><br></h2>
+            <p>
+                <h1 style="text-align: center;">{% trans 'Built for everyone' %}</h1>
+                <br>
+            </p>
             <p>
                 <h5>{% trans "It is a tool, helping you generate a series of structured data and useful analysis from your reading." %}
                 </h5>
@@ -32,8 +36,10 @@
     <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 2rem;width: 48rem;">
-            <h1 style="text-align: center;">{% trans 'Note without noting' %}</h1>
-            <h2><br></h2>
+            <p>
+                <h1 style="text-align: center;">{% trans 'Note without noting' %}</h1>
+                <br>
+            </p>
             <p>
                 <h5>{% trans "You don't have to take note or to remember anything. You just do what you used to do, and we'll take care of the rest." %}
                 </h5>
@@ -42,20 +48,23 @@
     </div>
     <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="padding: 2rem; width: 30rem;">
+        <div class="col-auto" style="padding: 2rem; width: 24rem;">
             <p>
                 <h1 style="text-align: center;">{% trans 'Join us' %}</h1>
             </p>
             <p>
                 <h5 style="text-align: center;">{% trans 'Now you are free from taking note.' %}</h5>
             </p>
-            <h2><br></h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto" style="padding: 2rem; width: 28rem;">
             <form method="post">
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="form-row">
                     <div class="form-group col">
-                        {% render_field field class+='form-control' placeholder=field.label %}
+                        {% render_field field class+='form-control' placeholder=field.label style='text-align: center' %}
                         {% if field.errors %}
                         <p>{{ field.errors }}</p>
                         {% endif %}
@@ -70,7 +79,7 @@
                 <div class="form-row">
                     <div class="form-group col">
                         <button type="submit"
-                            class="btn btn-success btn-block">{% trans 'Sign up for Hololink' %}</button>
+                            class="btn btn-block btn-success">{% trans 'Sign up' %}</button>
                     </div>
                 </div>
             </form>
