@@ -35,6 +35,17 @@
         </button>
         <div class="collapse navbar-collapse" id="togglerTarget">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {% trans 'More' %}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'article:change_list' %}">{% trans 'Article' %}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'login' %}">{% trans 'Account' %}</a>
+                    </div>
+                </li>
                 <a class="nav-itrm nav-link" data-toggle="modal" href="#" data-target="#modalHow">
                     {% trans 'How' %}
                 </a>
