@@ -264,7 +264,7 @@ msgstr "任何人都可以使用"
 msgid ""
 "Hololink is a tool, helping you generate a series of structure data and "
 "useful result analysis while you're reading."
-msgstr "Hololink 是一個幫助你的工具，在你閱讀時，幫你產生一系列的資料與有用的結果。"
+msgstr "Hololink 是一個工具，在你閱讀時，幫你產生一系列的資料與有用的結果。"
 
 #: .\templates\index.html:26
 msgid "Note whithout note."
@@ -274,7 +274,7 @@ msgstr "不用筆記的筆記"
 msgid ""
 "You don't have to note or to remember anything. You just do what you used to "
 "do, and we'll take care of the rest."
-msgstr "你不需要做筆記或記住任何事情，你只要向往常一樣就行了。剩下的就交給我們。"
+msgstr "你不需要做筆記或記住任何事情，你只要像往常一樣，剩下的就交給我們。"
 
 #: .\templates\index.html:37
 msgid "Join us now"
