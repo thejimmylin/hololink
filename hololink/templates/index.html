@@ -24,7 +24,7 @@
             <h1 style="text-align: center;">{% trans 'Built for everyone' %}</h1>
             <h2><br></h2>
             <p>
-                <h5>{% trans "It is a tool, helping you generate a series of structure data and useful analysis from your reading." %}
+                <h5>{% trans "It is a tool, helping you generate a series of structured data and useful analysis from your reading." %}
                 </h5>
             </p>
         </div>
@@ -43,8 +43,12 @@
     <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 2rem; width: 30rem;">
-            <h1 style="text-align: center;">{% trans 'Join us' %}</h1>
-            <p><h5 style="text-align: center;">{% trans 'Now you are free from taking note.' %}</h5></p>
+            <p>
+                <h1 style="text-align: center;">{% trans 'Join us' %}</h1>
+            </p>
+            <p>
+                <h5 style="text-align: center;">{% trans 'Now you are free from taking note.' %}</h5>
+            </p>
             <h2><br></h2>
             <form method="post">
                 {% csrf_token %}
