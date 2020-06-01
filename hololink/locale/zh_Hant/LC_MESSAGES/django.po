@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 11:31+0800\n"
+"POT-Creation-Date: 2020-06-01 17:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: .\accounts\templates\registration\login.html:37
 #: .\accounts\templates\registration\sign_up.html:17
 #: .\accounts\templates\registration\sign_up_with_email.html:17
-#: .\templates\base.html:56
+#: .\templates\base.html:71
 msgid "Login"
 msgstr "登入"
 
@@ -48,7 +48,7 @@ msgstr "仍未有帳號？"
 #: .\accounts\templates\registration\sign_up_with_email.html:7
 #: .\accounts\templates\registration\sign_up_with_email.html:15
 #: .\accounts\templates\registration\sign_up_with_email.html:40
-#: .\templates\base.html:57
+#: .\templates\base.html:72
 msgid "Sign up"
 msgstr "註冊"
 
@@ -95,7 +95,7 @@ msgstr "密碼重置的連結已失效，因為它已經被使用過了，請重
 #: .\accounts\templates\registration\password_reset_done.html:7
 #: .\accounts\templates\registration\password_reset_form.html:7
 #: .\accounts\templates\registration\password_reset_form.html:15
-#: .\templates\base.html:58
+#: .\templates\base.html:73
 msgid "Password reset"
 msgstr "密碼重置"
 
@@ -228,41 +228,85 @@ msgstr "已修改成功。"
 msgid "Deleted successfully."
 msgstr "已刪除成功。"
 
-#: .\templates\base.html:39 .\templates\modal_how.html:7
+#: .\templates\base.html:39
+msgid "Article"
+msgstr "文章"
+
+#: .\templates\base.html:44
+msgid "Help"
+msgstr "幫助"
+
+#: .\templates\base.html:48 .\templates\modal_how.html:7
 msgid "How"
 msgstr "如何使用"
 
-#: .\templates\base.html:43
+#: .\templates\base.html:51
 msgid "Why"
 msgstr "為何要使用"
 
-#: .\templates\base.html:54
+#: .\templates\base.html:55 .\templates\modal_about.html:7
+msgid "About"
+msgstr "關於"
+
+#: .\templates\base.html:69
 msgid "Logout"
 msgstr "登出"
 
-#: .\templates\modal_how.html:13
+#: .\templates\index.html:7
+msgid "Hoholink"
+msgstr ""
+
+#: .\templates\index.html:15
+msgid "Built for everyone."
+msgstr "任何人都可以使用"
+
+#: .\templates\index.html:18
+msgid ""
+"Hololink is a tool, helping you generate a series of structure data and "
+"useful result analysis while you're reading."
+msgstr "Hololink 是一個幫助你的工具，在你閱讀時，幫你產生一系列的資料與有用的結果。"
+
+#: .\templates\index.html:26
+msgid "Note whithout note."
+msgstr "不用筆記的筆記"
+
+#: .\templates\index.html:29
+msgid ""
+"You don't have to note or to remember anything. You just do what you used to "
+"do, and we'll take care of the rest."
+msgstr "你不需要做筆記或記住任何事情，你只要向往常一樣就行了。剩下的就交給我們。"
+
+#: .\templates\index.html:37
+msgid "Join us now"
+msgstr "加入我們"
+
+#: .\templates\index.html:59
+msgid "Sign up for Hololink"
+msgstr "註冊 Hololink"
+
+#: .\templates\modal_about.html:13 .\templates\modal_how.html:13
 msgid "What does Hololink do?"
 msgstr "Hololink 是做什麼用的？"
 
-#: .\templates\modal_how.html:14
+#: .\templates\modal_about.html:14 .\templates\modal_how.html:14
 msgid ""
 "It provides you with concepts and keywords from articles without taking "
 "notes yourself."
 msgstr "它提供你文章的許多概念與關鍵字，而且你完全不需要做任何筆記。"
 
-#: .\templates\modal_how.html:17
+#: .\templates\modal_about.html:17 .\templates\modal_how.html:17
 msgid "How can I get started?"
 msgstr "如何開始？"
 
-#: .\templates\modal_how.html:19
+#: .\templates\modal_about.html:19 .\templates\modal_how.html:19
 msgid "You could just bring your article URL here and "
 msgstr "你可以把你的文章網址帶過來這裡並"
 
-#: .\templates\modal_how.html:20
+#: .\templates\modal_about.html:20 .\templates\modal_how.html:20
 msgid "add it."
 msgstr "新增"
 
-#: .\templates\modal_how.html:21
+#: .\templates\modal_about.html:21 .\templates\modal_how.html:21
 msgid "We'll do the rest."
 msgstr "剩下的就交給我們。"
 

@@ -9,18 +9,33 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row" style="height: 3rem;"></div>
+    <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="padding: 1.5rem; width: 24rem;">
-            <h1 style="text-align: center;">{% trans 'Hoholink' %}</h1>
+        <div class="col-auto" style="padding: 2rem; width: 30rem;">
+            <h1 style="text-align: center;">{% trans 'Built for everyone.' %}</h1>
             <h2><br></h2>
+            <p>
+                <h5>{% trans "Hololink is a tool, helping you generate a series of structure data and useful result analysis while you're reading." %}
+                </h5>
+            </p>
         </div>
     </div>
+    <div class="row" style="height: 6rem;"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="padding: 1.5rem; width: 24rem;">
-            <h1 style="text-align: center;">{% trans 'Login' %}</h1>
+        <div class="col-auto" style="padding: 2rem; width: 30rem;">
+            <h1 style="text-align: center;">{% trans 'Note whithout note.' %}</h1>
             <h2><br></h2>
-            <p>{% trans "Don't have an account? " %}<a href="{% url 'sign_up' %}" class="text-decoration-none">{% trans 'Sign up' %}</a>{% trans ' now.' %}</p>
+            <p>
+                <h5>{% trans "You don't have to note or to remember anything. You just do what you used to do, and we'll take care of the rest." %}
+                </h5>
+            </p>
+        </div>
+    </div>
+    <div class="row" style="height: 6rem;"></div>
+    <div class="row justify-content-center">
+        <div class="col-auto" style="padding: 2rem; width: 30rem;">
+            <h1 style="text-align: center;">{% trans 'Join us now' %}</h1>
+            <h2><br></h2>
             <form method="post">
                 {% csrf_token %}
                 {% for field in form %}
@@ -40,11 +55,11 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
-                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Login' %}</button>
+                        <button type="submit"
+                            class="btn btn-success btn-block">{% trans 'Sign up for Hololink' %}</button>
                     </div>
                 </div>
             </form>
-            <p><a href="{% url 'password_reset' %}" class="text-decoration-none">{% trans 'Forgot your password?' %}</a></p>
         </div>
     </div>
 </div>
