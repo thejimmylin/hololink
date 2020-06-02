@@ -27,7 +27,7 @@
 <body>
     {% block nav %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-3">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand ml-2" href="/">
             <img src="{% static 'img/header_no_text_shortcut.png' %}" width="30" height="30"
                 class="d-inline-block align-top" alt="">
             {% trans 'Hololink' %}
@@ -90,7 +90,7 @@
                     </div>
                 </li>
                 {% endif %}
-                <form class="form-inline" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <form class="form-inline mr-2" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                     <select name="language" class="form-control" onchange="this.form.submit();">
                         {% get_current_language as LANGUAGE_CODE %}
                         {% get_available_languages as LANGUAGES %}

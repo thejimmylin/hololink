@@ -68,35 +68,32 @@ def change(request, id):
         return redirect(reverse('login'))
     context = {
         'form': None,
-        'messages': {},
+        'instant_messages': {},
     }
     instance = get_object_or_404(Article, id=id, created_by=request.user)
     if not request.POST:
         form = ArticleChangeForm(instance=instance)
         context['form'] = form
-        context['messages']['change'] = _(
+        context['instant_messages']['help_text'] = _(
             'The following is the current setting. Please fill in the part you want to modify and then submit.')
     else:
         form = ArticleChangeForm(request.POST, instance=instance)
         context['form'] = form
         if form.is_valid():
             form.save()
-            context['messages']['change'] = _('Changed successfully.')
-            return change_list(request, messages=context['messages'])
+            messages.success(request, _('Changed successfully.'))
+            return change_list(request)
     return render(request, 'article/change.html', context)
 
 
 def delete(request, id):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
-    context = {
-        'messages': {},
-    }
     instance = get_object_or_404(Article, id=id, created_by=request.user)
     if not request.POST:
         pass
     else:
         instance.delete()
-        context['messages']['delete'] = _('Deleted successfully.')
-        return change_list(request, messages=context['messages'])
-    return render(request, 'article/delete.html', context)
+        messages.success(request, _('Deleted successfully.'))
+        return change_list(request)
+    return render(request, 'article/delete.html')
