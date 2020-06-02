@@ -66,7 +66,7 @@
                 {% for field in form %}
                 <div class="form-row">
                     <div class="form-group col">
-                        {% render_field field class+='form-control' placeholder=field.label style='text-align: center' %}
+                        {% render_field field class+='form-control' placeholder=field.label style='text-align: center' required='true' %}
                         {% if field.errors %}
                         <p>{{ field.errors }}</p>
                         {% endif %}
@@ -81,9 +81,10 @@
                 <div class="form-row">
                     <div class="form-group col">
                         <button type="submit"
-                            class="btn btn-block btn-success">{% trans 'Sign up' %}</button>
+                            class="btn btn-block border-success text-success j3y-bg-theme-color-3">{% trans 'Sign up' %}</button>
                     </div>
                 </div>
+                <br>
                 <p>{% trans 'Already got an account? ' %}<a href="{% url 'login' %}" class="text-decoration-none">{% trans 'Login' %}</a>{% trans ' here.' %}</p>
             </form>
         </div>
