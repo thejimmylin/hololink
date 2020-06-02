@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 22:01+0800\n"
+"POT-Creation-Date: 2020-06-02 14:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: .\accounts\templates\registration\login.html:37
 #: .\accounts\templates\registration\sign_up.html:17
 #: .\accounts\templates\registration\sign_up_with_email.html:17
-#: .\templates\base.html:71
+#: .\templates\base.html:71 .\templates\base.html:83 .\templates\index.html:87
 msgid "Login"
 msgstr "登入"
 
@@ -48,7 +48,7 @@ msgstr "仍未有帳號？"
 #: .\accounts\templates\registration\sign_up_with_email.html:7
 #: .\accounts\templates\registration\sign_up_with_email.html:15
 #: .\accounts\templates\registration\sign_up_with_email.html:40
-#: .\templates\base.html:72
+#: .\templates\base.html:72 .\templates\base.html:84 .\templates\index.html:84
 msgid "Sign up"
 msgstr "註冊"
 
@@ -95,7 +95,7 @@ msgstr "密碼重置的連結已失效，因為它已經被使用過了，請重
 #: .\accounts\templates\registration\password_reset_done.html:7
 #: .\accounts\templates\registration\password_reset_form.html:7
 #: .\accounts\templates\registration\password_reset_form.html:15
-#: .\templates\base.html:73
+#: .\templates\base.html:73 .\templates\base.html:85
 msgid "Password reset"
 msgstr "密碼重置"
 
@@ -122,11 +122,13 @@ msgstr "重置"
 
 #: .\accounts\templates\registration\sign_up.html:17
 #: .\accounts\templates\registration\sign_up_with_email.html:17
+#: .\templates\index.html:87
 msgid "Already got an account? "
 msgstr "已經有帳號了嗎？"
 
 #: .\accounts\templates\registration\sign_up.html:17
 #: .\accounts\templates\registration\sign_up_with_email.html:17
+#: .\templates\index.html:87
 msgid " here."
 msgstr " "
 
@@ -228,23 +230,27 @@ msgstr "已修改成功。"
 msgid "Deleted successfully."
 msgstr "已刪除成功。"
 
-#: .\templates\base.html:39
+#: .\templates\base.html:30
+msgid "Hololink"
+msgstr ""
+
+#: .\templates\base.html:38
 msgid "Article"
 msgstr "文章"
 
-#: .\templates\base.html:44
+#: .\templates\base.html:43
 msgid "Help"
 msgstr "幫助"
 
-#: .\templates\base.html:48 .\templates\modal_how.html:7
+#: .\templates\base.html:47 .\templates\modal_how.html:7
 msgid "How"
 msgstr "如何使用"
 
-#: .\templates\base.html:51
+#: .\templates\base.html:50
 msgid "Why"
 msgstr "為何要使用"
 
-#: .\templates\base.html:55 .\templates\modal_about.html:7
+#: .\templates\base.html:54 .\templates\modal_about.html:7
 msgid "About"
 msgstr "關於"
 
@@ -252,49 +258,49 @@ msgstr "關於"
 msgid "Logout"
 msgstr "登出"
 
+#: .\templates\base.html:80
+msgid "You're not logged in"
+msgstr "你還未登入"
+
+#: .\templates\base.html:133
+msgid "Copyright © 2020 Hololink. All rights reserved"
+msgstr "Copyright © 2020 Hololink. 保留一切權利"
+
 #: .\templates\index.html:7
 msgid "Hoholink"
 msgstr ""
 
-#: .\templates\index.html:15
-msgid "Hololink"
-msgstr ""
-
-#: .\templates\index.html:17
+#: .\templates\index.html:21
 msgid "Gather, relate, store and share."
 msgstr "收集、關聯、儲存、分享"
 
-#: .\templates\index.html:24
+#: .\templates\index.html:29
 msgid "Built for everyone"
 msgstr "適合任何人"
 
-#: .\templates\index.html:27
+#: .\templates\index.html:33
 msgid ""
 "It is a tool, helping you generate a series of structured data and useful "
 "analysis from your reading."
 msgstr "一個幫助你的工具，從你的閱讀中產生一系列結構化的資料、有用的分析。"
 
-#: .\templates\index.html:35
+#: .\templates\index.html:42
 msgid "Note without noting"
 msgstr "不用動筆的筆記"
 
-#: .\templates\index.html:38
+#: .\templates\index.html:46
 msgid ""
 "You don't have to take note or to remember anything. You just do what you "
 "used to do, and we'll take care of the rest."
 msgstr "你不需要做筆記或記住任何事情，你只要像往常一樣，剩下的就交給我們。"
 
-#: .\templates\index.html:46
+#: .\templates\index.html:55
 msgid "Join us"
 msgstr "加入我們"
 
-#: .\templates\index.html:47
+#: .\templates\index.html:58
 msgid "Now you are free from taking note."
 msgstr "然後從做筆記中解脫"
-
-#: .\templates\index.html:69
-msgid "Sign up for Hololink"
-msgstr "註冊 Hololink"
 
 #: .\templates\modal_about.html:13 .\templates\modal_how.html:13
 msgid "What does Hololink do?"
