@@ -28,7 +28,8 @@
     {% block nav %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-3">
         <a class="navbar-brand" href="/">
-            <img src="{% static 'img/header_no_text_shortcut.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="{% static 'img/header_no_text_shortcut.png' %}" width="30" height="30"
+                class="d-inline-block align-top" alt="">
             {% trans 'Hololink' %}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglerTarget"
@@ -106,15 +107,26 @@
     </nav>
     {% endblock %}
     {% if messages %}
-    {% block messages %}
-    {% for key, value in messages.items %}
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    {% for message in messages %}
+    <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %} 
+        <span class="navbar-text py-0 text-success">{{ message }}</span>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR  %}
+        <span class="navbar-text py-0 text-danger">{{ message }}</span>
+        {% else %}
+        <span class="navbar-text py-0">{{ message }}</span>
+        {% endif %}
+    </nav>
+    {% endfor %}
+    {% endif %}
+    {% if instant_messages %}
+    {% for key, value in instant_messages.items %}
+    <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
         <span class="navbar-text py-0">
             {{ value }}
         </span>
     </nav>
     {% endfor %}
-    {% endblock %}
     {% endif %}
     {% block content %}
     {% endblock %}
@@ -133,7 +145,8 @@
     {% endblock %}
     {% block footer %}
     <nav class="navbar sticky-bottom navbar-expand-md navbar-light j3y-bg-theme-color-3" style="height: 80px;">
-        <p class="navbar-nav mr-auto ml-auto text-secondary">{% trans 'Copyright © 2020 Hololink. All rights reserved' %}</p>
+        <p class="navbar-nav mr-auto ml-auto text-secondary">
+            {% trans 'Copyright © 2020 Hololink. All rights reserved' %}</p>
     </nav>
     {% endblock %}
 </body>

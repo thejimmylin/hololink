@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
+from django.contrib import messages
 from django.utils.translation import gettext as _
 import hashlib
 from .models import Article
@@ -17,7 +18,7 @@ def sha256_hash(content):
     return sha.hexdigest()
 
 
-def change_list(request, messages={}):
+def change_list(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
     articles = Article.objects.filter(created_by=request.user)
@@ -29,7 +30,6 @@ def change_list(request, messages={}):
         if len(article.from_url) > 64:
             article.from_url = f'{article.from_url[:64]}...'
     context = {
-        'messages': messages,
         'articles': articles,
     }
     return render(request, 'article/change_list.html', context)
@@ -40,13 +40,12 @@ def add(request):
         return redirect(reverse('login'))
     context = {
         'form': None,
-        'messages': {},
+        'instant_messages': {}
     }
     if not request.POST:
         form = ArticleForm()
         context['form'] = form
-        context['messages']['add'] = _(
-            'Fill in the following form to create a new article.')
+        context['instant_messages']['help_text'] = _('Fill in the following form to create a new article.')
     else:
         form = ArticleForm(request.POST)
         context['form'] = form
@@ -59,8 +58,8 @@ def add(request):
                 created_by=request.user,
                 created_at=now(),
             )
-            context['messages']['add'] = _('Added successfully.')
-            return change_list(request, messages=context['messages'])
+            messages.success(request, _('Added successfully.'))
+            return change_list(request)
     return render(request, 'article/add.html', context)
 
 
