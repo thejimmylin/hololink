@@ -27,7 +27,10 @@
 <body>
     {% block nav %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-3">
-        <a class="navbar-brand" href="/">{% trans 'Hololink' %}</a>
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'img/header_no_text_shortcut.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            {% trans 'Hololink' %}
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglerTarget"
             aria-controls="togglerTarget" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
