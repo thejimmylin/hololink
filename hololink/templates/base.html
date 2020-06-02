@@ -43,7 +43,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         {% trans 'Help' %}
                     </a>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">                        
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" data-toggle="modal" href="#" data-target="#modalHow">
                             {% trans 'How' %}
                         </a>
@@ -128,6 +128,11 @@
         crossorigin="anonymous"></script>
     {% endblock %}
     {% block extrajs %}
+    {% endblock %}
+    {% block footer %}
+    <nav class="navbar navbar-expand-md navbar-light j3y-bg-blue-2" style="height: 6rem;">
+        <p class="navbar-brand mr-auto ml-auto">{% trans 'Contact us: ' %}<a href="#" class="text-decoration-none">{% trans 'service@hololink.co' %}</a></p>
+    </nav>
     {% endblock %}
 </body>
 
