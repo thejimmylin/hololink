@@ -3,6 +3,22 @@
     color: #343A40;
 }
 
+html {
+    height: 100%;
+}
+ 
+body {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 136px;
+}
+
+.container-fluid {
+    min-height: 100%;
+}
+
 th {
     font-family: 'Roboto Slab', 'Noto Sans TC', 'Times New Roman', Times, serif;
     font-weight: 500;
@@ -42,22 +58,22 @@ th {
     border-radius: .5rem;
 }
 
-.j3y-bg-blue-1 {
-    background-color: rgb(232, 228, 238, .2);
+.j3y-bg-theme-color-1 {
+    background-color: rgb(218, 238, 238, .2);
 }
 
-.j3y-bg-blue-2 {
-    background-color: rgb(232, 228, 238, .4);
+.j3y-bg-theme-color-2 {
+    background-color: rgb(218, 238, 238, .4);
 }
 
-.j3y-bg-blue-3 {
-    background-color: rgb(232, 228, 238, .6);
+.j3y-bg-theme-color-3 {
+    background-color: rgb(218, 238, 238, .6);
 }
 
-.j3y-bg-blue-4 {
-    background-color: rgb(232, 228, 238, .8);
+.j3y-bg-theme-color-4 {
+    background-color: rgb(218, 238, 238, .8);
 }
 
-.j3y-bg-blue-5 {
-    background-color: rgb(232, 228, 238, 1);
+.j3y-bg-theme-color-5 {
+    background-color: rgb(218, 238, 238, 1);
 }

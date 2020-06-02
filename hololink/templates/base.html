@@ -26,7 +26,7 @@
 
 <body>
     {% block nav %}
-    <nav class="navbar navbar-expand-md navbar-light j3y-bg-blue-4">
+    <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-3">
         <a class="navbar-brand" href="/">Hololink</a>
         {% if user.is_authenticated %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglerTarget"
@@ -130,7 +130,7 @@
     {% block extrajs %}
     {% endblock %}
     {% block footer %}
-    <nav class="navbar navbar-expand-md navbar-light j3y-bg-blue-3" style="padding-top: 2rem; padding-bottom: 1.5rem;">
+    <nav class="navbar sticky-bottom navbar-expand-md navbar-light j3y-bg-theme-color-3" style="height: 80px;">
         <p class="navbar-nav mr-auto ml-auto text-dark">{% trans 'Copyright © 2020 Hololink. All rights reserved' %}</p>
     </nav>
     {% endblock %}
