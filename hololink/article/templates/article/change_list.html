@@ -8,27 +8,40 @@
 
 {% block content %}
 <div class="container-fluid">
+    <div class="row" style="height: 4rem;"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="padding: 1.5rem;">
-            {% if articles %}
-            <div style="text-align: center; padding: 2rem;">
-                <p>
-                    <h3>Hololink</h3>
-                    {% trans 'Links which may surprise you.' %}
-                </p>
+        <div class="col-auto" style="text-align: center;width: 24rem;">
+            <p>
+                <hr>
+                <h1 class="text-dark">{% trans 'Hololink' %}</h1>
+                <hr>
+            </p>
+            <p class="text-secondary" style="text-align: center;">
+                {% trans 'Gather, relate, store and share.' %}
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            {% if not articles %}
+            <div style="text-align: center;padding: 2rem;">
+                <p>{% trans "You don't have any article to show. " %}<a class="text-primary"
+                        href="{% url 'article:add' %}">{% trans 'Add one now.'%}</a></p>
             </div>
-            <div style="text-align: end; padding: 2rem;">
-                <a class="btn btn-secondary" href="{% url 'article:add' %}" style="width: 8rem; border-radius: 2rem;">{% trans 'Add +'%}</a>
+            {% else %}
+            <div style="text-align: end;padding: 2rem;">
+                <a class="btn btn-secondary" href="{% url 'article:add' %}"
+                    style="width: 8rem; border-radius: 2rem;">{% trans 'Add +'%}</a>
             </div>
             <table class="j3y-df table table-light table-bordered table-striped table-responsive">
                 <thead>
                     <tr style="text-align: left;">
-                        <th>{% trans 'Action' %}</th>
-                        <th>{% trans 'Hash' %}</th>
-                        <th>{% trans 'Name' %}</th>
-                        <th>{% trans 'Content' %}</th>
-                        <th>{% trans 'URL' %}</th>
-                        <th>{% trans 'Created at' %}</th>
+                        <th style="width: 6rem;">{% trans 'Action' %}</th>
+                        <th style="width: 6rem;">{% trans 'Hash' %}</th>
+                        <th style="width: 8rem;">{% trans 'Name' %}</th>
+                        <th style="width: 12rem;">{% trans 'Content' %}</th>
+                        <th style="width: 16rem;">{% trans 'URL' %}</th>
+                        <th style="width: 8rem;">{% trans 'Created at' %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +52,8 @@
                                     role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">{% trans 'Choose' %}</button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item"
-                                        href="{% url 'article:change' id=article.id %}">{% trans 'Change' %}</a><a class="dropdown-item"
+                                        href="{% url 'article:change' id=article.id %}">{% trans 'Change' %}</a><a
+                                        class="dropdown-item"
                                         href="{% url 'article:delete' id=article.id %}">{% trans 'Delete' %}</a></div>
                             </div>
                         </td>
@@ -52,14 +66,6 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {% else %}
-            <div style="text-align: center; padding: 2rem;">
-                <p>
-                    <h3>{% trans 'Welcome to Hololink.' %}</h3>
-                </p>
-                <p>{% trans "You don't have any article to show. " %}<a class="text-primary"
-                        href="{% url 'article:add' %}">{% trans 'Add one now.'%}</a></p>
-            </div>
             {% endif %}
         </div>
     </div>
