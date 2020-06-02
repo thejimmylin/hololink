@@ -13,9 +13,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-auto j3y-border-1 j3y-bg-theme-color-1" style="padding: 1.5rem;">
-            <h2>{% trans 'Change' %}</h2>
-            <h2><br></h2>
+        <div class="col-auto j3y-border-1 j3y-bg-theme-color-1" style="padding: 1.5rem; min-width: 24rem;">
             <form method="post">
                 {% csrf_token %}
                 {% for field in form %}
@@ -36,7 +34,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
-                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Add' %}</button>
+                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Change' %}</button>
                     </div>
                 </div>
             </form>
