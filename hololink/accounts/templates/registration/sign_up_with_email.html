@@ -9,11 +9,15 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row" style="height: 6rem;"></div>
+    <div class="row" style="height: 2rem;"></div>
+    <div class="row justify-content-center">
+        <div class="col-auto" style="width: 12rem;">
+            <img src="{% static 'img/header_no_text.png' %}" class="img-fluid" alt="Responsive image">
+            <h2 class="text-dark" style="text-align: center;">{% trans 'Hololink' %}</h2>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 1.5rem; width: 24rem;">
-            <h1 style="text-align: center;">{% trans 'Sign up' %}</h1>
-            <h2><br></h2>
             <p>{% trans 'Already got an account? ' %}<a href="{% url 'login' %}" class="text-decoration-none">{% trans 'Login' %}</a>{% trans ' here.' %}</p>
             <form method="post">
                 {% csrf_token %}
@@ -37,7 +41,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
-                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Sign up' %}</button>
+                        <button type="submit" class="btn btn-dark btn-block">{% trans 'Sign up' %}</button>
                     </div>
                 </div>
             </form>
