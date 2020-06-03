@@ -33,15 +33,15 @@
                 <a class="btn btn-secondary" href="{% url 'article:add' %}"
                     style="width: 8rem; border-radius: 2rem;">{% trans 'Add +'%}</a>
             </div>
-            <table class="j3y-df table table-light table-bordered table-striped table-responsive">
+            <table class="table table-light table-bordered table-striped table-responsive w-100 j3y-table">
                 <thead>
                     <tr style="text-align: left;">
-                        <th style="width: 6rem;">{% trans 'Action' %}</th>
-                        <th style="width: 6rem;">{% trans 'Hash' %}</th>
-                        <th style="width: 8rem;">{% trans 'Name' %}</th>
-                        <th style="width: 12rem;">{% trans 'Content' %}</th>
-                        <th style="width: 16rem;">{% trans 'URL' %}</th>
-                        <th style="width: 8rem;">{% trans 'Created at' %}</th>
+                        <th scope="col">{% trans 'Action' %}</th>
+                        <th scope="col">{% trans 'Hash' %}</th>
+                        <th scope="col">{% trans 'Name' %}</th>
+                        <th scope="col">{% trans 'Content' %}</th>
+                        <th scope="col">{% trans 'URL' %}</th>
+                        <th scope="col">{% trans 'Created at' %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,6 +68,7 @@
             </table>
             {% endif %}
         </div>
+
     </div>
     <div class="row justify-content-center">
         <div class="col-auto" style="padding: 1.5rem;">

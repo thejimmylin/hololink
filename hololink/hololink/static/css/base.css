@@ -21,13 +21,11 @@ th {
     font-weight: 500;
 }
 
-.j3y-table th {
-    width: 4.5rem;
-}
-
-.j3y-df td, th {
+table tr td {
     max-width: 15rem;
-    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .j3y-border-1 {
