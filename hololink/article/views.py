@@ -50,7 +50,7 @@ def add(request):
         form = ArticleForm(request.POST)
         context['form'] = form
         if form.is_valid():
-            obj = Article.objects.create(
+            Article.objects.create(
                 hash=sha256_hash(form.cleaned_data.get('content')),
                 name=form.cleaned_data.get('name'),
                 content=form.cleaned_data.get('content'),
