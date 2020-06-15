@@ -29,6 +29,15 @@ class Article(models.Model):
         max_length=1024,
         blank=True,
     )
+    recommandation = models.BooleanField(
+        verbose_name=_('Recommandation'),
+        default=False,
+    )
+    project = models.CharField(
+        verbose_name=_('Project'),
+        max_length=256,
+        blank=True,
+    )
     created_by = models.ForeignKey(
         verbose_name=_('Created by'),
         to=settings.AUTH_USER_MODEL,

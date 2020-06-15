@@ -65,6 +65,7 @@ def add(request):
     return render(request, 'article/add.html', context)
 
 
+@csrf_exempt
 def change(request, id):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
