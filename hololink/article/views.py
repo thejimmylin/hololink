@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.views.decorators.csrf import csrf_exempt
 import hashlib
 from .models import Article
 from .forms import ArticleForm, ArticleChangeForm
@@ -35,6 +36,7 @@ def change_list(request):
     return render(request, 'article/change_list.html', context)
 
 
+@csrf_exempt
 def add(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
