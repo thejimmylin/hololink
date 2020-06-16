@@ -136,17 +136,18 @@
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" data-toggle="modal" href="#" data-target="#modalHow">
                             {% trans 'How' %}
-                        </a>
-                        {% include 'modal_how.html' %}
+                        </a>      
                         <a class="dropdown-item" data-toggle="modal" href="#" data-target="#modalWhy">
                             {% trans 'Why' %}
                         </a>
-                        {% include 'modal_why.html' %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" data-toggle="modal" href="#" data-target="#modalAbout">
                             {% trans 'About' %}
                         </a>
                     </div>
+                    {% include 'modal_why.html' %}
+                    {% include 'modal_how.html' %}
+                    {% include 'modal_about.html' %}
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -180,7 +181,7 @@
 
     {% if messages %}
     {% for message in messages %}
-    <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
+    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-1">
         {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
         <span class="navbar-text py-0 text-success">{{ message }}</span>
         {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR  %}
@@ -194,7 +195,7 @@
 
     {% if instant_messages %}
     {% for key, value in instant_messages.items %}
-    <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
+    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-1">
         <span class="navbar-text py-0">
             {{ value }}
         </span>
@@ -221,7 +222,7 @@
     {% endblock %}
 
     {% block footer %}
-    <nav class="navbar sticky-bottom navbar-expand-md navbar-light j3y-bg-theme-color-3" style="height: 80px;">
+    <nav class="navbar sticky-bottom navbar-expand-md navbar-light bg-j3y-theme-3" style="height: 80px;">
         <p class="navbar-nav mr-auto ml-auto text-secondary">
             {% trans 'Copyright © 2020 Hololink. All rights reserved' %}</p>
     </nav>
