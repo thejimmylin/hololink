@@ -1,13 +1,18 @@
 {% load i18n %}
 {% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
 <!DOCTYPE html>
 <html>
 
 <head>
+
     {% block meta %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
+
     {% block css %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,19 +22,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     {% endblock %}
+
     {% block extracss %}
     {% endblock %}
+
     {% block title %}
     <title>{% trans 'Hololink' %}</title>
     {% endblock title %}
+
 </head>
 
 <body>
+
     {% block nav %}
+    {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-3">
         <a class="navbar-brand ml-1" href="/">
-            <img src="{% static 'img/header_no_text_shortcut.png' %}" width="30" height="30"
-                class="d-inline-block align-top" alt="">
+            {% include 'brand_nav_icon.html' %}
             {% trans 'Hololink' %}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglerTarget"
@@ -106,6 +115,7 @@
         </div>
     </nav>
     {% endblock %}
+
     {% if messages %}
     {% for message in messages %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
@@ -119,6 +129,7 @@
     </nav>
     {% endfor %}
     {% endif %}
+
     {% if instant_messages %}
     {% for key, value in instant_messages.items %}
     <nav class="navbar navbar-expand-md navbar-light j3y-bg-theme-color-1">
@@ -128,8 +139,10 @@
     </nav>
     {% endfor %}
     {% endif %}
+
     {% block content %}
     {% endblock %}
+
     {% block basejs %}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -141,14 +154,17 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     {% endblock %}
+
     {% block extrajs %}
     {% endblock %}
+
     {% block footer %}
     <nav class="navbar sticky-bottom navbar-expand-md navbar-light j3y-bg-theme-color-3" style="height: 80px;">
         <p class="navbar-nav mr-auto ml-auto text-secondary">
             {% trans 'Copyright © 2020 Hololink. All rights reserved' %}</p>
     </nav>
     {% endblock %}
+
 </body>
 
 </html>
