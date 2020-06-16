@@ -69,11 +69,7 @@
                         <td>{{ article.name }}</td>
                         <td>{{ article.content }}</td>
                         <td>{{ article.url }}</td>
-                        {% if article.recommendation == "on" %}
-                        <td> True </td>
-                        {% else %}
-                        <td> False </td>
-                        {% endif %}
+                        <td>{{ article.recommendation }}</td>
                         <td>{{ article.project }}</td>
                         <td>{{ article.created_at|date:"Y-m-d" }} {{ article.created_at|time:"H:i:s" }}</td>
                     </tr>

@@ -23,6 +23,9 @@ def change_list(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
     articles = Article.objects.filter(created_by=request.user)
+    for article in articles:
+        if len(article.content) > 50:
+            article.content = article.content[0:48] + '..'
     context = {
         'articles': articles,
     }

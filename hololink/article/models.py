@@ -29,7 +29,7 @@ class Article(models.Model):
         max_length=1024,
         blank=True,
     )
-    recommandetion = models.BooleanField(
+    recommendation = models.BooleanField(
         verbose_name=_('Recommendation'),
         default=False,
     )
