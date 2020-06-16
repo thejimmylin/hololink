@@ -1,6 +1,10 @@
 * {
-    font-family: Georgia, 'Noto Sans TC', 'Times New Roman', Times, serif;
+    font-family: 'Roboto Slab', 'Noto Sans TC', 'Times New Roman', Times, serif;
     color: #343A40;
+}
+
+nav .nav-link {
+    font-weight: 500;
 }
 
 html {
@@ -16,41 +20,12 @@ body {
     min-height: 100%;
 }
 
-th {
-    font-family: 'Roboto Slab', 'Noto Sans TC', 'Times New Roman', Times, serif;
-    font-weight: 500;
+.border-j3y-theme-1 {
+    border: 1px solid rgba(213, 208, 218, .5);
 }
 
-table tr td {
-    max-width: 15rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.j3y-border-1 {
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: .5rem;
-}
-
-.j3y-border-2 {
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: .5rem;
-}
-
-.j3y-border-3 {
-    border: 1px solid rgba(0,0,0,.3);
-    border-radius: .5rem;
-}
-
-.j3y-border-4 {
-    border: 1px solid rgba(0,0,0,.4);
-    border-radius: .5rem;
-}
-
-.j3y-border-5 {
-    border: 1px solid rgba(0,0,0,.5);
-    border-radius: .5rem;
+.border-j3y-theme-2 {
+    border: 1px solid rgba(213, 208, 218, 1);
 }
 
 .j3y-bg-theme-color-1 {
@@ -69,6 +44,22 @@ table tr td {
     background-color: rgb(218, 218, 218, .8);
 }
 
-.j3y-bg-theme-color-5 {
-    background-color: rgb(218, 218, 218, 1);
+table th,
+table td {
+    vertical-align: text-top;
+    min-width: 7rem;
+    max-width: 10rem;
+    word-wrap: break-word;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: rgba(233, 228, 238, .5);
+}
+
+table tbody tr:hover {
+    background-color: rgba(233, 228, 238, 1);
+}
+
+table .advanced-field {
+    display: none;
 }

@@ -29,8 +29,8 @@ class Article(models.Model):
         max_length=1024,
         blank=True,
     )
-    recommandation = models.BooleanField(
-        verbose_name=_('Recommandation'),
+    recommandetion = models.BooleanField(
+        verbose_name=_('Recommendation'),
         default=False,
     )
     project = models.CharField(
