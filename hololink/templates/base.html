@@ -181,7 +181,7 @@
 
     {% if messages %}
     {% for message in messages %}
-    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-1">
+    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-3">
         {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
         <span class="navbar-text py-0 text-success">{{ message }}</span>
         {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR  %}
@@ -196,8 +196,8 @@
     {% block tip %}
     {% if tips %}
     {% for tip in tips %}
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <span class="navbar-text py-0 text-secondary">{{ tip }}</span>
+    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-2">
+        <span class="navbar-text py-0">{{ tip }}</span>
     </nav>
     {% endfor %}
     {% endif %}

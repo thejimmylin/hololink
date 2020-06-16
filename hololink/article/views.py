@@ -49,12 +49,12 @@ def add(request):
                 name=form.cleaned_data.get('name'),
                 content=form.cleaned_data.get('content'),
                 from_url=form.cleaned_data.get('from_url'),
-                recommandetion=form.cleaned_data.get('recommandetion'),
+                recommendation=form.cleaned_data.get('recommendation'),
                 project=form.cleaned_data.get('project'),
                 created_by=request.user,
                 created_at=now(),
             )
-            messages.success(request, _('Added successfully.'))
+            messages.add_message(request, messages.SUCCESS, _('Added successfully.'))
             return redirect(reverse('article:change_list'))
     else:
         form = ArticleForm()
@@ -77,13 +77,14 @@ def change(request, id):
         context['form'] = form
         if form.is_valid():
             form.save()
-            messages.success(request, _('Changed successfully.'))
+            messages.add_message(request, messages.SUCCESS, _('Added successfully.'))
             return redirect(reverse('article:change_list'))
     else:
         form = ArticleChangeForm(instance=instance)
         context['form'] = form
-        context['tips'] += [_(
-            'The following is the current setting. Please fill in the part you want to modify and then submit.')]
+        context['tips'] += [
+            _('The following is the current setting. Please fill in the part you want to modify and then submit.')
+        ]
     return render(request, 'article/change.html', context)
 
 
@@ -93,6 +94,6 @@ def delete(request, id):
     instance = get_object_or_404(Article, id=id, created_by=request.user)
     if request.method == 'POST':
         instance.delete()
-        messages.success(request, _('Deleted successfully.'))
-        return change_list(request)
+        messages.add_message(request, messages.SUCCESS, _('Deleted successfully.'))
+        return redirect(reverse('article:change_list'))
     return render(request, 'article/delete.html')
