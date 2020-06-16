@@ -193,15 +193,15 @@
     {% endfor %}
     {% endif %}
 
-    {% if instant_messages %}
-    {% for key, value in instant_messages.items %}
-    <nav class="navbar navbar-expand-md navbar-light bg-j3y-theme-1">
-        <span class="navbar-text py-0">
-            {{ value }}
-        </span>
+    {% block tip %}
+    {% if tips %}
+    {% for tip in tips %}
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <span class="navbar-text py-0 text-secondary">{{ tip }}</span>
     </nav>
     {% endfor %}
     {% endif %}
+    {% endblock %}
 
     {% block content %}
     {% endblock %}

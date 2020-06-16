@@ -12,4 +12,4 @@ class ArticleChangeForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        exclude = ['hash', 'content', 'from_url', 'created_by', 'created_at', ]
+        exclude = ['hash', 'created_by', 'created_at', ]
