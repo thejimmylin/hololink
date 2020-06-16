@@ -84,4 +84,4 @@ def sign_up_with_email(request):
     context = {
         'form': form,
     }
-    return render(request, 'registration/sign_up_with_chief_email.html', context)
+    return render(request, 'registration/sign_up_with_email.html', context)

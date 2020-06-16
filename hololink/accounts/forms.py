@@ -7,6 +7,16 @@ from django.utils.translation import gettext_lazy as _
 
 class SignUpWithEmailForm(forms.ModelForm):
 
+    email = forms.EmailField(
+        label=_('Email'),
+        required=True,
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': _('Email'),
+            },
+        ),
+    )
+
     class Meta:
         model = User
         fields = ['email']

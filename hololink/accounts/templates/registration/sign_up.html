@@ -3,48 +3,24 @@
 {% load static %}
 {% load widget_tweaks %}
 
-{% block title %}
-<title>{% trans 'Sign up' %} | {% trans 'Accounts' %}</title>
-{% endblock title %}
-
 {% block content %}
 <div class="container-fluid">
-    <div class="row" style="height: 2rem;"></div>
+    <div class="row" style="height: 4rem"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="width: 12rem;">
-            <img src="{% static 'img/header_no_text.png' %}" class="img-fluid" alt="Responsive image">
-            <h2 class="text-dark" style="text-align: center;">{% trans 'Hololink' %}</h2>
+        <div class="col-auto">
+            <div class="text-center">
+                {% include 'brand.html' %}
+                <h1>{% trans 'Hololink' %}</h1>
+            </div>
         </div>
     </div>
+    <div class="row" style="height: 2rem"></div>
     <div class="row justify-content-center">
-        <div class="col-auto" style="padding: 1.5rem; width: 24rem;">
-            <h1 style="text-align: center;">{% trans 'Sign up' %}</h1>
-            <h2><br></h2>
-            <p>{% trans 'Already got an account? ' %}<a href="{% url 'login' %}" class="text-decoration-none">{% trans 'Login' %}</a>{% trans ' here.' %}</p>
-            <form method="post">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="form-row">
-                    <div class="form-group col">
-                        {% render_field field class+='form-control' placeholder=field.label %}
-                        {% if field.errors %}
-                        <p>{{ field.errors }}</p>
-                        {% endif %}
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="form-row">
-                    <div class="form-group col">
-                        {{ form.non_field_errors }}
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col">
-                        <button type="submit" class="btn btn-primary btn-block">{% trans 'Sign up' %}</button>
-                    </div>
-                </div>
-            </form>
+        <div class="col-auto" style="width: 21.6rem">
+            <a class="btn btn-block btn-dark" href="{% url 'sign_up_with_email' %}">{% trans 'Sign up with Email.' %}</a>
+            <a class="btn btn-block border-dark text-secondary" href="#" data-toggle="modal" data-target="#modalAbout">{% trans 'My Email has been used.' %}</a>
         </div>
     </div>
+    <div class="row" style="height: 8rem"></div>
 </div>
 {% endblock %}
