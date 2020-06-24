@@ -9,6 +9,7 @@ def now():
 
 
 class Article(models.Model):
+
     hash = models.CharField(
         verbose_name=_('Hash'),
         max_length=128,
@@ -33,9 +34,9 @@ class Article(models.Model):
         verbose_name=_('Recommendation'),
         default=False,
     )
-    project = models.CharField(
+    project = models.ManyToManyField(
         verbose_name=_('Project'),
-        max_length=256,
+        to='Project',
         blank=True,
     )
     created_by = models.ForeignKey(
@@ -45,4 +46,13 @@ class Article(models.Model):
     )
     created_at = models.DateTimeField(
         verbose_name=_('Created at'),
+    )
+
+
+class Project(models.Model):
+
+    name = models.CharField(
+        verbose_name=_('Name'),
+        max_length=256,
+        blank=True,
     )

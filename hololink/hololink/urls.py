@@ -1,5 +1,4 @@
 from django.urls import path, include
-from django.views.generic import RedirectView
 from django.contrib import admin
 from .views import index, d3demo
 
