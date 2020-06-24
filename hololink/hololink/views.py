@@ -4,6 +4,9 @@ from django.core.mail import send_mail
 import uuid
 
 
+def d3demo(request):
+    return render(request, 'd3demo.html')
+
 # a email-sending script, not a view
 def send_password_email(subject, message, recipient):
     try:

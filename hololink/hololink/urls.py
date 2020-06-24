@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.contrib import admin
-from .views import index
+from .views import index, d3demo
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -10,4 +10,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('article/', include('article.urls')),
     path('', index, name='index'),
+    path('d3demo/', d3demo, name='d3demo'),
 ]
