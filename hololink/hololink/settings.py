@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     # This make it easier to integrate django templates with bootstrap things.
+    'rest_framework',
     'widget_tweaks',
     'accounts.apps.AccountsConfig',
     'article.apps.ArticleConfig',
