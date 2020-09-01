@@ -1,7 +1,8 @@
-# Hololink
+<img src="https://github.com/j3ygithub/hololink/blob/master/docs/images/brand.png" width="15%">
+
 https://hololink.co/
 
-<img src="https://github.com/j3ygithub/hololink/blob/master/docs/images/brand.png" width="20%">
+
 
 
 This repository is moved to:
